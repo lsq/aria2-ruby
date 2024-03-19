@@ -68,7 +68,11 @@ module Aria2
 
       # Base64-encoded JSON array
       def build_params(*args)
-        params = ["token:#{@token}", args]
+        #p args
+        #params = ["token:#{@token}", args]
+        params = ["token:#{@token}", *args]
+        #params = [*args]
+        #p params
         Base64.encode64 JSON.dump(params)
       end
 
